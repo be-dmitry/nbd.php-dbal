@@ -41,11 +41,11 @@ class QueryEvent extends Event {
 
   /**
    * @param \PDOStatement|string $statement    either the prepared statement, or the SQL used to prepare
-   * @param array $parameters   query parameters sent to database
-   * @param bool  $use_master   whether or not master database is in use
+   * @param array                $parameters   query parameters sent to database
+   * @param bool                 $use_master   whether or not master database is in use
    * @param Behance\NBD\Dbal\DbalException $exception
    */
-  public function __construct( $statement, array $parameters = null, $use_master = false, DbalException $exception = null ) {
+  public function __construct( $statement, array $parameters = [], $use_master = false, DbalException $exception = null ) {
 
     $this->_statement  = ( $statement instanceof \PDOStatement )
                          ? $statement
